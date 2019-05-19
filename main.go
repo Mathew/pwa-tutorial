@@ -18,8 +18,7 @@ func getStatic(filename string) []byte {
 
 func htmlFileHandler(filename string, contentType string) func(w http.ResponseWriter, r *http.Request) {
 	return func(w http.ResponseWriter, r *http.Request) {
-		fmt.Println("called")
-		fmt.Println(filename)
+		fmt.Printf("Serving: %v\n", filename)
 		content := getStatic(filename)
 
 		if contentType == "" {
